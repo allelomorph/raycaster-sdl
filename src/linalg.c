@@ -1,19 +1,30 @@
-
 #include "linalg.h"
 
 Vector3f vectorAdd(Vector3f* vec1, Vector3f* vec2) {
-    Vector3f retVec = {vec1->x + vec2->x, vec1->y + vec2->y, 1};
-    return retVec;
+	Vector3f retVec;
+
+	retVec.x = vec1->x + vec2->x;
+	retVec.y = vec1->y + vec2->y;
+	retVec.z = 1;
+	return retVec;
 }
 
 Vector3f vectorSubtract(Vector3f* vec1, Vector3f* vec2) {
-    Vector3f retVec = {vec1->x - vec2->x, vec1->y - vec2->y, 1};
-    return retVec;
+	Vector3f retVec;
+
+	retVec.x = vec1->x - vec2->x;
+	retVec.y = vec1->y - vec2->y;
+	retVec.z = 1;
+	return retVec;
 }
 
 Vector3f homogeneousVectorScale(Vector3f* vec, float scalar) {
-    Vector3f retVec = {vec->x * scalar, vec->y * scalar, 1};
-    return retVec;
+	Vector3f retVec;
+
+	retVec.x = vec->x * scalar;
+	retVec.y = vec->y * scalar;
+	retVec.z = 1;
+	return retVec;
 }
 
 Vector3f normalizeVector(Vector3f* vec) {
@@ -30,10 +41,15 @@ float homogeneousVectorMagnitude(Vector3f* vec) {
     return sqrt(vec->x * vec->x + vec->y * vec->y);
 }
 
+/*
+float homogeneousVectorMagnitude(Vector3f* vec) {
+    return sqrt(vec->x * vec->x + vec->y * vec->y);
+}
+try to implement ID's alternative to sqrt and see if that improves frame rate */
+
 float vectorDotProduct(Vector3f* vec1, Vector3f* vec2) {
     return vec1->x * vec2->x + vec1->y * vec2->y;
 }
-
 
 void matrixVectorMultiply(Matrix3f* mat, Vector3f* vec) {
     Vector3f newVec;
@@ -45,7 +61,7 @@ void matrixVectorMultiply(Matrix3f* mat, Vector3f* vec) {
 }
 
 void matrixMatrixMultiply(Matrix3f* mat1, Matrix3f* mat2) {
-    int row, col, i;
+    int row, col;
     Matrix3f retMat;
 
     for(row = 0; row < 3; row++) {

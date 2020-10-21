@@ -168,7 +168,7 @@ int setupWindow() {
     return TRUE;
 }
 
-int main(int argc, char** argv) {
+int main( /*int argc, char** argv */ ) {
     if(!setupWindow()) {
         fprintf(stderr, "Could not initialize raycaster!\n");
         return EXIT_FAILURE;

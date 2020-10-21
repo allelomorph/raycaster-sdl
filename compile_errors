@@ -1,0 +1,35 @@
+Source files (space delimited): src/*
+Output file: raycaster
+src/linalg.c: In function vectorAdd:
+src/linalg.c:5:5: error: initializer element is not computable at load time [-Werror]
+     Vector3f retVec = {vec1->x + vec2->x, vec1->y + vec2->y, 1};
+     ^
+src/linalg.c:5:5: error: initializer element is not computable at load time [-Werror]
+src/linalg.c: In function vectorSubtract:
+src/linalg.c:10:5: error: initializer element is not computable at load time [-Werror]
+     Vector3f retVec = {vec1->x - vec2->x, vec1->y - vec2->y, 1};
+     ^
+src/linalg.c:10:5: error: initializer element is not computable at load time [-Werror]
+src/linalg.c: In function homogeneousVectorScale:
+src/linalg.c:15:5: error: initializer element is not computable at load time [-Werror]
+     Vector3f retVec = {vec->x * scalar, vec->y * scalar, 1};
+     ^
+src/linalg.c:15:5: error: initializer element is not computable at load time [-Werror]
+src/linalg.c: In function matrixMatrixMultiply:
+src/linalg.c:48:19: error: unused variable i [-Werror=unused-variable]
+     int row, col, i;
+                   ^
+cc1: all warnings being treated as errors
+src/main.c: In function main:
+src/main.c:171:14: error: unused parameter argc [-Werror=unused-parameter]
+ int main(int argc, char** argv) {
+              ^
+src/main.c:171:27: error: unused parameter argv [-Werror=unused-parameter]
+ int main(int argc, char** argv) {
+                           ^
+cc1: all warnings being treated as errors
+src/renderer.c: In function renderProjectedScene:
+src/renderer.c:96:17: error: unused variable texture [-Werror=unused-variable]
+         Uint32* texture;
+                 ^
+cc1: all warnings being treated as errors
